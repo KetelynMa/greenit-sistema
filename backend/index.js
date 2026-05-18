@@ -55,12 +55,21 @@ app.post('/usuarios', (req, res) => {
     db.query(sql, [nome, email, senha], (err) => {
 
         if (err) {
+
             console.log(err);
+
+            if (err.code === '23505') {
+
+                res.status(400).send('Usuário já cadastrado');
+                return;
+            }
+
             res.status(500).send('Erro ao cadastrar usuário');
             return;
         }
 
         res.send('Usuário cadastrado!');
+
     });
 
 });
