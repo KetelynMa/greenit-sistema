@@ -149,7 +149,7 @@ body{
 }
 
 .logo-folha img{
-    width:300px;
+    width:350px;
     height:auto;
     object-fit:contain;
 }
@@ -162,15 +162,15 @@ body{
 }
 
 .conteudo-info h3{
-    font-size:28px;
+    font-size:25px;
     color:#7dff9b;
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .conteudo-info p{
-    font-size:20px;
-    line-height:34px;
-    margin-bottom:25px;
+    font-size:18px;
+    line-height:30px;
+    margin-bottom:22px;
     width:75%;
 }
 
