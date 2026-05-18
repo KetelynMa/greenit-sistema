@@ -7,6 +7,32 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+db.query(`
+CREATE TABLE IF NOT EXISTS usuarios (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100),
+    email VARCHAR(100),
+    senha VARCHAR(100)
+)
+`);
+
+db.query(`
+CREATE TABLE IF NOT EXISTS empresas (
+    id SERIAL PRIMARY KEY,
+    razao_social VARCHAR(200),
+    nome_empresa VARCHAR(200),
+    cnpj VARCHAR(30),
+    porte VARCHAR(100),
+    setor VARCHAR(100),
+    cidade VARCHAR(100),
+    estado VARCHAR(100),
+    colaboradores VARCHAR(50),
+    responsavel_ti VARCHAR(100),
+    email_responsavel VARCHAR(100),
+    telefone_responsavel VARCHAR(50)
+)
+`);
+
 /* TESTE */
 app.get('/', (req, res) => {
     res.send('Backend GreenTech funcionando!');
