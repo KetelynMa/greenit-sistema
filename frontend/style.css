@@ -217,29 +217,22 @@ body{
 }
 
 .menu-lateral li{
-    padding:18px;
-    margin-bottom:15px;
-    border-radius:10px;
-    cursor:pointer;
-    transition:0.3s;
-    font-size:18px;
-}
-
-.menu-lateral li:hover{
-    background:#2ecc71;
-}
-
-.menu-lateral li{
     padding:16px 22px;
     margin-bottom:16px;
-    border-radius:12px;
+    border-radius:14px;
+    background:#118530;
+    color:white;
+    font-size:18px;
+    font-weight:600;
     cursor:pointer;
     transition:0.3s;
+    text-align:center;
 }
 
 .menu-lateral li:hover{
     background:linear-gradient(90deg,#0b6623,#2ecc71);
-    transform:translateX(5px);
+    transform:translateY(-2px);
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* CONTEÚDO */
