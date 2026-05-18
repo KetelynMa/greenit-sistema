@@ -753,3 +753,13 @@ window.addEventListener("load", () => {
         document.getElementById("lembrarSenha").checked = true;
     }
 });
+
+function sairSistema() {
+    document.getElementById("painel").style.display = "none";
+    document.querySelector(".container").style.display = "flex";
+
+    document.getElementById("emailLogin").value = "";
+    document.getElementById("senhaLogin").value = "";
+}
+
+window.sairSistema = sairSistema;
