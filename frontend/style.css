@@ -141,7 +141,7 @@ body{
 }
 
 .logo-folha{
-    width:100%;
+    width:120%;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -1230,7 +1230,7 @@ body{
     }
 
     .logo-folha img{
-        width:120px;
+        width:150px;
     }
 
 }
