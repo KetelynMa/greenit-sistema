@@ -142,6 +142,7 @@ body{
 }
 
 .logo-folha{
+    margin-top:40px;
     width:120%;
     display:flex;
     justify-content:center;
