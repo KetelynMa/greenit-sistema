@@ -1182,3 +1182,30 @@ body{
         max-width:720px;
     }
 }
+
+/* AJUSTE NOTEBOOK / DESKTOP */
+
+.layout-maturidade{
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.coluna-legenda{
+    width:320px;
+    min-width:320px;
+}
+
+.card-dimensao{
+    flex:1;
+    max-width:800px;
+}
+
+.container{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+}
