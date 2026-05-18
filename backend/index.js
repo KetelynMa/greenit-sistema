@@ -45,7 +45,7 @@ app.post('/usuarios', (req, res) => {
 
     const sql = `
         INSERT INTO usuarios (nome, email, senha)
-        VALUES (?, ?, ?)
+        VALUES ($1, $2, $3)
     `;
 
     db.query(sql, [nome, email, senha], (err) => {
@@ -58,6 +58,7 @@ app.post('/usuarios', (req, res) => {
 
         res.send('Usuário cadastrado!');
     });
+
 });
 
 /* LISTAR EMPRESAS */
