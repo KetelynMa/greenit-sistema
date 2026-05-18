@@ -149,7 +149,7 @@ body{
 }
 
 .logo-folha img{
-    width:250px;
+    width:300px;
     height:auto;
     object-fit:contain;
 }
@@ -1230,7 +1230,7 @@ body{
     }
 
     .logo-folha img{
-        width:150px;
+        width:200px;
     }
 
 }
