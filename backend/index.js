@@ -7,6 +7,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+/* CRIAR TABELAS */
+
 db.query(`
 CREATE TABLE IF NOT EXISTS usuarios (
     id SERIAL PRIMARY KEY,
@@ -34,11 +36,13 @@ CREATE TABLE IF NOT EXISTS empresas (
 `);
 
 /* TESTE */
+
 app.get('/', (req, res) => {
     res.send('Backend GreenTech funcionando!');
 });
 
 /* CADASTRAR USUÁRIO */
+
 app.post('/usuarios', (req, res) => {
 
     const { nome, email, senha } = req.body;
@@ -61,7 +65,47 @@ app.post('/usuarios', (req, res) => {
 
 });
 
+/* LOGIN */
+
+app.post('/login', (req, res) => {
+
+    const { email, senha } = req.body;
+
+    const sql = `
+        SELECT * FROM usuarios
+        WHERE email = $1 AND senha = $2
+    `;
+
+    db.query(sql, [email, senha], (err, result) => {
+
+        if (err) {
+            console.log(err);
+            res.status(500).send('Erro no servidor');
+            return;
+        }
+
+        if (result.rows.length > 0) {
+
+            res.json({
+                sucesso: true,
+                usuario: result.rows[0]
+            });
+
+        } else {
+
+            res.status(401).json({
+                sucesso: false,
+                mensagem: 'E-mail ou senha inválidos'
+            });
+
+        }
+
+    });
+
+});
+
 /* LISTAR EMPRESAS */
+
 app.get('/empresas', (req, res) => {
 
     db.query('SELECT * FROM empresas', (err, result) => {
@@ -72,11 +116,14 @@ app.get('/empresas', (req, res) => {
             return;
         }
 
-        res.json(result);
+        res.json(result.rows);
+
     });
+
 });
 
 /* CADASTRAR EMPRESA */
+
 app.post('/empresas', (req, res) => {
 
     const {
@@ -112,7 +159,7 @@ app.post('/empresas', (req, res) => {
 
         )
 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
     `;
 
     db.query(sql, [
@@ -138,51 +185,13 @@ app.post('/empresas', (req, res) => {
         }
 
         res.send('Empresa cadastrada!');
-    });
-});
-
-/* LOGIN */
-
-app.post('/login', (req, res) => {
-
-    const { email, senha } = req.body;
-
-    const sql = `
-        SELECT * FROM usuarios
-        WHERE email = ? AND senha = ?
-    `;
-
-    db.query(sql, [email, senha], (err, result) => {
-
-        if (err) {
-
-            console.log(err);
-
-            res.status(500).send('Erro no servidor');
-
-            return;
-        }
-
-        if (result.length > 0) {
-
-            res.json({
-                sucesso: true,
-                usuario: result[0]
-            });
-
-        } else {
-
-            res.status(401).json({
-                sucesso: false,
-                mensagem: 'E-mail ou senha inválidos'
-            });
-        }
 
     });
 
 });
 
 /* PORTA */
+
 app.listen(3001, () => {
     console.log('Servidor GreenTech rodando na porta 3001');
 });
