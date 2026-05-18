@@ -1,20 +1,19 @@
-const mysql = require('mysql2');
+const { Pool } = require('pg');
 
-const connection = mysql.createConnection({
-    host: 'host.docker.internal',
-    user: 'root',
-    password: '123456',
-    database: 'greenit',
-    port: 3307
-});
-
-connection.connect((err) => {
-    if (err) {
-        console.error('Erro ao conectar no MySQL:', err);
-        return;
+const pool = new Pool({
+    connectionString: 'postgresql://greenit_db_96re_user:9oS4GDqwM7k5qlGM5S0zx5sM9OVCZy7s@dpg-d858qleq1p3s73f233sg-a.oregon-postgres.render.com/greenit_db_96re',
+    ssl: {
+        rejectUnauthorized: false
     }
-
-    console.log('Banco Green IT conectado!');
 });
 
-module.exports = connection;
+pool.connect()
+    .then(() => {
+        console.log('PostgreSQL conectado!');
+    })
+    .catch((err) => {
+        console.error('Erro PostgreSQL:', err);
+    });
+
+module.exports = pool;
+
