@@ -86,9 +86,12 @@ async function cadastrarUsuario() {
 
         const resultado = await resposta.text();
 
-        alert(resultado);
-
-        voltarLogin();
+        if (resposta.ok) { 
+            alert("Usuário cadastrado com sucesso!");
+            voltarLogin();
+        } else {
+            alert("Erro ao cadastrar usuário: " + resultado);
+}
 
     } catch (erro) {
 
