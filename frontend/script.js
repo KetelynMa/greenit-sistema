@@ -9,7 +9,7 @@ async function entrarSistema() {
     }
 
     try {
-        const resposta = await fetch("http://localhost:3001/login", {
+        const resposta = await fetch("https://greenit-sistema.onrender.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -70,9 +70,8 @@ async function cadastrarUsuario() {
 
     try {
 
-        const resposta = await fetch(
-            "https://recliner-nugget-residence.ngrok-free.dev/usuarios",
-            {
+        const resposta = await fetch("https://greenit-sistema.onrender.com/usuarios", {
+            
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -120,9 +119,7 @@ async function cadastrarEmpresa() {
 
     try {
 
-        const resposta = await fetch(
-            "https://recliner-nugget-residence.ngrok-free.dev/empresas",
-            {
+        const resposta = await fetch("https://greenit-sistema.onrender.com/empresas", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
