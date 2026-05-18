@@ -229,6 +229,19 @@ body{
     background:#2ecc71;
 }
 
+.menu-lateral li{
+    padding:16px 22px;
+    margin-bottom:16px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.menu-lateral li:hover{
+    background:linear-gradient(90deg,#0b6623,#2ecc71);
+    transform:translateX(5px);
+}
+
 /* CONTEÚDO */
 
 .conteudo-painel{
