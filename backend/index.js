@@ -198,6 +198,38 @@ app.post('/empresas', (req, res) => {
 
 });
 
+/* ALTERAR SENHA */
+
+app.put('/alterar-senha', (req, res) => {
+
+    const email = req.body.email.trim();
+    const novaSenha = req.body.novaSenha.trim();
+
+    const sql = `
+        UPDATE usuarios
+        SET senha = $1
+        WHERE LOWER(email) = LOWER($2)
+    `;
+
+    db.query(sql, [novaSenha, email], (err, result) => {
+
+        if (err) {
+            console.log(err);
+            res.status(500).send('Erro ao alterar senha');
+            return;
+        }
+
+        if (result.rowCount === 0) {
+            res.status(404).send('Usuário não encontrado');
+            return;
+        }
+
+        res.send('Senha alterada com sucesso!');
+
+    });
+
+});
+
 /* PORTA */
 
 app.listen(3001, () => {

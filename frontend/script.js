@@ -53,8 +53,45 @@ function voltarLogin() {
     document.getElementById("login").style.display = "block";
 }
 
-function esqueceuSenha() {
-    alert("Informe seu e-mail para redefinir a senha.");
+async function esqueceuSenha() {
+
+    const email = prompt("Digite seu e-mail:");
+
+    if (!email) return;
+
+    const novaSenha = prompt("Digite a nova senha:");
+
+    if (!novaSenha) return;
+
+    try {
+
+        const resposta = await fetch("https://greenit-sistema.onrender.com/alterar-senha", {
+
+            method: "PUT",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                email,
+                novaSenha
+            })
+
+        });
+
+        const resultado = await resposta.text();
+
+        alert(resultado);
+
+    } catch (erro) {
+
+        console.log(erro);
+
+        alert("Erro ao alterar senha.");
+
+    }
+
 }
 
 function abrirTela(nomeTela) {
