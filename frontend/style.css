@@ -1110,3 +1110,75 @@ body{
         width:100%;
     }
 }
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px){
+
+    .layout-maturidade{
+        flex-direction:column;
+    }
+
+    .coluna-legenda{
+        width:100%;
+        position:relative;
+        top:0;
+    }
+
+    .card-dimensao,
+    .instrucao-maturidade{
+        width:100%;
+        padding:20px;
+    }
+
+    .container{
+        width:95%;
+        margin:auto;
+    }
+
+    .botoes-dimensao{
+        flex-direction:column;
+    }
+
+    .botoes-dimensao button{
+        width:100%;
+    }
+
+    .linha-cabecalho,
+    .linha-tabela{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+    }
+
+    .painel{
+        flex-direction:column;
+    }
+
+}
+
+@media (min-width: 769px){
+
+    .conteudo-painel{
+        max-width:1200px;
+    }
+
+    .layout-maturidade{
+        max-width:1100px;
+    }
+
+    .card-dimensao{
+        max-width:720px;
+    }
+
+    .coluna-legenda{
+        width:360px;
+    }
+
+    .resultado-card{
+        max-width:720px;
+    }
+}
