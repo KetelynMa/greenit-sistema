@@ -29,6 +29,14 @@ async function entrarSistema() {
             alert("E-mail ou senha inválidos.");
         }
 
+        if (document.getElementById("lembrarSenha").checked) {
+            localStorage.setItem("emailLogin", email);
+            localStorage.setItem("senhaLogin", senha);
+        } else {
+            localStorage.removeItem("emailLogin");
+            localStorage.removeItem("senhaLogin");
+}
+
     } catch (erro) {
         console.log(erro);
         alert("Erro ao realizar login.");
@@ -697,3 +705,14 @@ function reiniciarAvaliacao() {
 }
 
 window.reiniciarAvaliacao = reiniciarAvaliacao;
+
+window.addEventListener("load", () => {
+    const emailSalvo = localStorage.getItem("emailLogin");
+    const senhaSalva = localStorage.getItem("senhaLogin");
+
+    if (emailSalvo && senhaSalva) {
+        document.getElementById("emailLogin").value = emailSalvo;
+        document.getElementById("senhaLogin").value = senhaSalva;
+        document.getElementById("lembrarSenha").checked = true;
+    }
+});
