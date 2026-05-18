@@ -45,7 +45,9 @@ app.get('/', (req, res) => {
 
 app.post('/usuarios', (req, res) => {
 
-    const { nome, email, senha } = req.body;
+    const nome = req.body.nome.trim();
+    const email = req.body.email.trim();
+    const senha = req.body.senha.trim();
 
     const sql = `
         INSERT INTO usuarios (nome, email, senha)
@@ -78,11 +80,12 @@ app.post('/usuarios', (req, res) => {
 
 app.post('/login', (req, res) => {
 
-    const { email, senha } = req.body;
+    const email = req.body.email.trim();
+    const senha = req.body.senha.trim();
 
     const sql = `
         SELECT * FROM usuarios
-        WHERE email = $1 AND senha = $2
+        WHERE LOWER(email) = LOWER($1) AND senha = $2
     `;
 
     db.query(sql, [email, senha], (err, result) => {
@@ -94,19 +97,15 @@ app.post('/login', (req, res) => {
         }
 
         if (result.rows.length > 0) {
-
             res.json({
                 sucesso: true,
                 usuario: result.rows[0]
             });
-
         } else {
-
             res.status(401).json({
                 sucesso: false,
                 mensagem: 'E-mail ou senha inválidos'
             });
-
         }
 
     });
