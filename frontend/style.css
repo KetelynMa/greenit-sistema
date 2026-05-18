@@ -1,0 +1,1112 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#dff5e7;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* LOGIN */
+
+.container{
+    width:90%;
+    height:90vh;
+    display:flex;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.lado-login{
+    width:50%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-box{
+    width:70%;
+}
+
+.login-box h1{
+    font-size:60px;
+    margin-bottom:35px;
+    color:#0d1b2a;
+}
+
+.login-box input{
+    width:100%;
+    padding:18px;
+    margin-bottom:20px;
+    border:none;
+    background:#f1f1f1;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.opcoes{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    font-size:15px;
+}
+
+.opcoes label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.opcoes input[type="checkbox"]{
+    width:16px;
+    height:16px;
+    margin:0;
+}
+
+.opcoes a{
+    text-decoration:none;
+    color:#1b8a3f;
+    font-weight:bold;
+}
+
+.login-box button{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#0b6623,#2ecc71);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-box button:hover{
+    transform:scale(1.02);
+}
+
+.linha{
+    text-align:center;
+    margin:35px 0;
+    color:#777;
+}
+
+.cadastro{
+    text-align:center;
+    color:#0b6623;
+    font-weight:bold;
+    font-size:18px;
+    cursor:pointer;
+}
+
+/* INFO */
+
+.lado-info{
+    width:50%;
+    background:linear-gradient(
+        135deg,
+        #001f0f,
+        #0b6623,
+        #2ecc71
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    padding:40px;
+}
+
+.conteudo-info{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.logo-folha{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:5px;
+}
+
+.logo-folha img{
+    width:520px;
+    height:260px;
+    object-fit:cover;
+    object-position:center;
+}
+
+.conteudo-info h2{
+    font-size:72px;
+    margin-top:-10px;
+    margin-bottom:10px;
+    line-height:78px;
+}
+
+.conteudo-info h3{
+    font-size:28px;
+    color:#7dff9b;
+    margin-bottom:20px;
+}
+
+.conteudo-info p{
+    font-size:20px;
+    line-height:34px;
+    margin-bottom:25px;
+    width:75%;
+}
+
+.btn-info{
+    padding:18px 45px;
+    border:2px solid white;
+    background:transparent;
+    color:white;
+    border-radius:40px;
+    font-size:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-info:hover{
+    background:white;
+    color:#0b6623;
+}
+
+/* PAINEL */
+
+#painel{
+    width:100%;
+    height:100vh;
+    display:flex;
+}
+
+/* MENU */
+
+.menu-lateral{
+    width:280px;
+    background:#0b6623;
+    color:white;
+    padding:40px 25px;
+}
+
+.menu-lateral h2{
+    font-size:35px;
+    margin-bottom:50px;
+}
+
+.menu-lateral ul{
+    list-style:none;
+}
+
+.menu-lateral li{
+    padding:18px;
+    margin-bottom:15px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:18px;
+}
+
+.menu-lateral li:hover{
+    background:#2ecc71;
+}
+
+/* CONTEÚDO */
+
+.conteudo-painel{
+    flex:1;
+    background:#f5fff7;
+    padding:50px;
+    overflow-y:auto;
+}
+
+.conteudo-painel h1{
+    font-size:45px;
+    color:#0d1b2a;
+    margin-bottom:15px;
+}
+
+.conteudo-painel p{
+    font-size:20px;
+    color:#444;
+    margin-bottom:40px;
+}
+
+/* CARDS */
+
+.cards{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:250px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#0b6623;
+    font-size:24px;
+}
+
+.card p{
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* FORM EMPRESA */
+
+.form-empresa{
+    width:550px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    margin-top:30px;
+}
+
+.form-empresa input,
+.form-empresa select{
+    padding:18px;
+    border:none;
+    border-radius:10px;
+    background:white;
+    font-size:16px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.form-empresa button{
+    padding:18px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#0b6623,#2ecc71);
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.form-empresa button:hover{
+    transform:scale(1.02);
+}
+
+/* PERFIL EMPRESA */
+
+.card-empresa{
+    width:700px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    margin-top:30px;
+}
+
+.card-empresa h2{
+    color:#0b6623;
+    margin-bottom:30px;
+    font-size:32px;
+}
+
+.card-empresa p{
+    margin-bottom:18px;
+    font-size:18px;
+    color:#333;
+}
+
+.card-empresa strong{
+    color:#0d1b2a;
+}
+
+/* ESCALA MATURIDADE */
+
+.escala-maturidade{
+    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.nivel{
+    padding:15px;
+    border-radius:10px;
+    color:#222;
+    font-weight:bold;
+}
+
+.n0{
+    background:#d9d9d9;
+}
+
+.n1{
+    background:#ff8c8c;
+}
+
+.n2{
+    background:#ffbe76;
+}
+
+.n3{
+    background:#ffe66d;
+}
+
+.n4{
+    background:#9be27b;
+}
+
+.n5{
+    background:#4cd137;
+    color:white;
+}
+/* DASHBOARD */
+
+.cards-dashboard{
+    display:flex;
+    gap:30px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.card-dashboard{
+    width:280px;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card-dashboard h3{
+    color:#0b6623;
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.card-dashboard h2{
+    font-size:38px;
+    color:#0d1b2a;
+}
+
+.barra-area{
+    margin-top:50px;
+    width:800px;
+}
+
+.barra-area h3{
+    margin-bottom:20px;
+    font-size:24px;
+    color:#0d1b2a;
+}
+
+.barra-externa{
+    width:100%;
+    height:35px;
+    background:#dfe6e9;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.barra-interna{
+    width:0%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        #0b6623,
+        #2ecc71
+    );
+
+    transition:1s;
+}
+/* MATURIDADE COM ESTILO IGUAL AO CADASTRO DE EMPRESA */
+
+.quiz-maturidade{
+    width:800px;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    margin-top:30px;
+}
+
+.pergunta{
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.pergunta h3{
+    font-size:18px;
+    color:#0d1b2a;
+    margin-bottom:15px;
+}
+
+.pergunta select{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:10px;
+    background:#f1f1f1;
+    font-size:16px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.quiz-maturidade button{
+    width:300px;
+    padding:18px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#0b6623,#2ecc71);
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.quiz-maturidade button:hover{
+    transform:scale(1.02);
+}
+
+.resultado-card{
+    width:700px;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    margin-top:25px;
+}
+
+.resultado-card h2{
+    color:#0b6623;
+    margin-bottom:25px;
+    font-size:30px;
+}
+
+.resultado-card p{
+    font-size:18px;
+    color:#333;
+    margin-bottom:15px;
+}
+
+.resultado-card strong{
+    color:#0d1b2a;
+}
+
+/* MELHORIAS */
+
+.card-melhoria{
+    width:850px;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    margin-top:30px;
+}
+
+.card-melhoria h2{
+    color:#0b6623;
+    margin-bottom:25px;
+    font-size:30px;
+}
+
+.card-melhoria ul{
+    margin-top:20px;
+    padding-left:25px;
+}
+
+.card-melhoria li{
+    margin-bottom:15px;
+    font-size:18px;
+    color:#333;
+    line-height:28px;
+}
+
+/* ATIVOS */
+
+.form-ativo{
+    width:550px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    margin-top:30px;
+}
+
+.form-ativo input,
+.form-ativo select{
+    padding:18px;
+    border:none;
+    border-radius:10px;
+    background:white;
+    font-size:16px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.form-ativo button{
+    padding:18px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#0b6623,#2ecc71);
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.form-ativo button:hover{
+    transform:scale(1.02);
+}
+
+.card-ativo{
+    width:700px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    margin-top:25px;
+}
+
+.card-ativo h2{
+    color:#0b6623;
+    margin-bottom:20px;
+}
+
+.card-ativo p{
+    margin-bottom:12px;
+    font-size:17px;
+}
+
+.quiz-maturidade input{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:10px;
+    background:#f1f1f1;
+    font-size:16px;
+}
+
+.card-ativo{
+    width:800px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    margin-top:25px;
+}
+
+.card-ativo h2{
+    color:#0b6623;
+    margin-bottom:20px;
+}
+
+.card-ativo p{
+    margin-bottom:12px;
+    font-size:17px;
+}
+.quiz-maturidade input{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:10px;
+    background:#f1f1f1;
+    font-size:16px;
+}
+
+.card-ativo{
+    width:800px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    margin-top:25px;
+}
+
+.card-ativo h2{
+    color:#0b6623;
+    margin-bottom:20px;
+}
+
+.card-ativo p{
+    margin-bottom:12px;
+    font-size:17px;
+}
+
+/* TIMELINE */
+
+.timeline-area{
+    position:relative;
+    margin-top:50px;
+    padding-left:50px;
+}
+
+.timeline-area::before{
+    content:"";
+    position:absolute;
+    left:18px;
+    top:0;
+    width:5px;
+    height:100%;
+    background:#2ecc71;
+    border-radius:10px;
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:40px;
+}
+
+.timeline-ponto{
+    position:absolute;
+    left:-40px;
+    top:25px;
+    width:22px;
+    height:22px;
+    background:#0b6623;
+    border:5px solid #2ecc71;
+    border-radius:50%;
+    z-index:2;
+}
+
+.timeline-card{
+    width:800px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.timeline-card h2{
+    color:#0b6623;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.timeline-card p{
+    font-size:18px;
+    line-height:30px;
+    color:#444;
+    margin-bottom:20px;
+}
+
+.timeline-card span{
+    background:#dff5e7;
+    color:#0b6623;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+}
+
+/* TREINAMENTOS */
+
+.cards-treinamento{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    margin-top:40px;
+}
+
+.card-treinamento{
+    width:380px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card-treinamento h2{
+    color:#0b6623;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.card-treinamento p{
+    font-size:17px;
+    line-height:28px;
+    color:#444;
+    margin-bottom:25px;
+}
+
+.status-treinamento{
+    width:max-content;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:25px;
+    font-size:15px;
+}
+
+.concluido{
+    background:#d4f8d4;
+    color:#0b6623;
+}
+
+.andamento{
+    background:#fff3cd;
+    color:#856404;
+}
+
+.pendente{
+    background:#f8d7da;
+    color:#721c24;
+}
+
+.card-treinamento button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(
+        90deg,
+        #0b6623,
+        #2ecc71
+    );
+
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card-treinamento button:hover{
+    transform:scale(1.02);
+}
+
+/* QUIZ */
+
+
+
+.quiz-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.quiz-card h2{
+    color:#0d1b2a;
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.quiz-card select{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:10px;
+    background:#f1f1f1;
+    font-size:16px;
+}
+
+.quiz-area button{
+    width:300px;
+    padding:18px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(
+        90deg,
+        #0b6623,
+        #2ecc71
+    );
+
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.quiz-area button:hover{
+    transform:scale(1.02);
+}
+
+.resultado-quiz{
+    width:700px;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.resultado-quiz h2{
+    color:#0b6623;
+    margin-bottom:20px;
+}
+/* AVALIAÇÃO POR DIMENSÕES */
+
+/* LAYOUT MATURIDADE */
+
+.layout-maturidade{
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
+    margin-top:30px;
+}
+
+.coluna-legenda{
+    width:420px;
+    flex-shrink:0;
+    position:sticky;
+    top:20px;
+}
+
+.coluna-legenda h2{
+    color:#0b6623;
+    margin-bottom:15px;
+}
+
+.coluna-perguntas{
+    flex:1;
+}
+
+.legenda-niveis{
+    width:100%;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+}
+
+.linha-nivel{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:18px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.linha-nivel span{
+    font-weight:normal;
+    line-height:24px;
+    font-size:15px;
+}
+
+.n0{ background:#555; }
+.n1{ background:#ff1f1f; }
+.n2{ background:#ff9900; }
+.n3{ background:#6ca043; }
+.n4{ background:#0080a8; }
+.n5{ background:#003b7a; }
+
+.instrucao-maturidade{
+    width:100%;
+    background:white;
+    margin-top:20px;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.instrucao-maturidade p{
+    font-size:15px;
+    margin-bottom:12px;
+    color:#333;
+}
+
+.card-dimensao{
+    width:100%;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card-dimensao h2{
+    color:#0b6623;
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.questao-dimensao{
+    margin-bottom:25px;
+}
+
+.questao-dimensao h3{
+    font-size:18px;
+    color:#0d1b2a;
+    margin-bottom:12px;
+}
+
+.questao-dimensao select,
+.questao-dimensao textarea{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:10px;
+    background:#f1f1f1;
+    font-size:16px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.questao-dimensao textarea{
+    min-height:90px;
+    resize:vertical;
+}
+
+.botoes-dimensao{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
+}
+
+.botoes-dimensao button{
+    padding:16px 35px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#0b6623,#2ecc71);
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.resultado-card button{
+    margin-top:20px;
+    padding:16px 35px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#0b6623,#2ecc71);
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.resultado-card button:hover{
+    transform:scale(1.02);
+}
+/* RESPONSIVO CELULAR */
+
+@media (max-width: 900px){
+
+    body{
+        height:auto;
+        display:block;
+    }
+
+    .container{
+        width:100%;
+        height:auto;
+        min-height:100vh;
+        flex-direction:column;
+        border-radius:0;
+    }
+
+    .lado-login,
+    .lado-info{
+        width:100%;
+        min-height:50vh;
+    }
+
+    .login-box{
+        width:85%;
+        padding:30px 0;
+    }
+
+    .login-box h1{
+        font-size:42px;
+    }
+
+    .conteudo-info h2{
+        font-size:42px;
+        line-height:48px;
+    }
+
+    .logo-folha img{
+        width:300px;
+        height:160px;
+    }
+
+    #painel{
+        flex-direction:column;
+        height:auto;
+    }
+
+    .menu-lateral{
+        width:100%;
+        padding:25px;
+    }
+
+    .menu-lateral ul{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .menu-lateral li{
+        font-size:15px;
+        margin-bottom:0;
+        padding:12px;
+    }
+
+    .conteudo-painel{
+        padding:25px;
+    }
+
+    .cards-dashboard,
+    .cards-treinamento{
+        flex-direction:column;
+    }
+
+    .card-dashboard,
+    .card-treinamento,
+    .card-empresa,
+    .card-melhoria,
+    .card-ativo,
+    .resultado-card{
+        width:100%;
+    }
+
+    .barra-area,
+    .quiz-maturidade,
+    .form-empresa,
+    .form-ativo,
+    .timeline-card{
+        width:100%;
+    }
+
+    .layout-maturidade{
+        flex-direction:column;
+    }
+
+    .coluna-legenda,
+    .coluna-perguntas{
+        width:100%;
+    }
+
+    .coluna-legenda{
+        position:static;
+    }
+
+    .linha-nivel{
+        font-size:14px;
+    }
+
+    .botoes-dimensao{
+        flex-direction:column;
+    }
+
+    .botoes-dimensao button,
+    .quiz-maturidade button{
+        width:100%;
+    }
+}

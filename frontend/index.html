@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenTech Maturity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+    <div class="container">
+
+        <div class="lado-login">
+
+            <div class="login-box" id="login">
+
+                <h1>Entrar</h1>
+
+                <input type="email"
+                       id="emailLogin"
+                       placeholder="E-mail corporativo">
+                
+                <input type="password"
+                       id="senhaLogin"
+                       placeholder="Senha">
+
+                <div class="opcoes">
+                    <label>
+                        <input type="checkbox">
+                        Lembrar senha
+                    </label>
+
+                    <a href="#" onclick="esqueceuSenha()">Esqueceu a senha?</a>
+                </div>
+
+                <button onclick="entrarSistema()">
+                    Entrar
+                </button>
+
+                <div class="linha">
+                    <span>ou</span>
+                </div>
+
+                <p class="cadastro">
+                    <span onclick="mostrarCadastro()">Criar conta</span>
+                </p>
+
+            </div>
+
+            <div class="login-box" id="cadastro" style="display:none;">
+
+                <h1>Criar Conta Empresarial</h1>
+
+                <input type="text" id="nomeCadastro" placeholder="Nome do responsável">
+                <input type="email" id="emailCadastro" placeholder="E-mail corporativo">
+                <input type="password" id="senhaCadastro" placeholder="Senha">
+
+                <button onclick="cadastrarUsuario()">Criar conta</button>
+
+                <div class="linha">
+                    <span>ou</span>
+                </div>
+
+                <p class="cadastro">
+                    <span onclick="voltarLogin()">Voltar para login</span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="lado-info">
+
+            <div class="conteudo-info">
+
+                <div class="logo-folha">
+                    <img src="img/leaf.png" alt="Logo">
+                </div>
+
+                <h2>GreenTech <br> Maturity</h2>
+
+                <h3>Plataforma de Maturidade Sustentável</h3>
+
+                <p>
+                    Ajudamos empresas a medir, gerenciar e evoluir sua maturidade
+                    em sustentabilidade aplicada à tecnologia.
+                </p>
+
+                <button class="btn-info" onclick="mostrarCadastro()">Criar conta</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PAINEL -->
+    <div id="painel" style="display:none;">
+
+        <div class="menu-lateral">
+
+            <h2>GreenTech</h2>
+
+            <ul>
+                <li onclick="abrirTela('dashboard')">📊 Dashboard</li>
+                <li onclick="abrirTela('empresa')">🏢 Empresa</li>
+                <li onclick="abrirTela('maturidade')">🌱 Maturidade</li>
+                <li onclick="abrirTela('ativos')">💻 Ativos</li>
+                <li onclick="abrirTela('melhorias')">📈 Melhorias</li>
+                <li onclick="abrirTela('timeline')">🛣️ Linha do Tempo</li>
+                <li onclick="abrirTela('treinamentos')">🎓 Treinamentos</li>
+                <li onclick="abrirTela('quiz')">📝 Quiz</li>
+            </ul>
+
+        </div>
+
+        <div class="conteudo-painel">
+
+            <!-- DASHBOARD -->
+            <div id="dashboard" class="tela">
+
+                <h1>Dashboard Green IT</h1>
+
+                <p>Indicadores gerais da maturidade sustentável da empresa.</p>
+
+                <div class="cards-dashboard">
+
+                    <div class="card-dashboard">
+                        <h3>Índice Green IT</h3>
+                        <h2 id="scoreDashboard">0.0</h2>
+                    </div>
+
+                    <div class="card-dashboard">
+                        <h3>Classificação</h3>
+                        <h2 id="nivelDashboard">Inexistente</h2>
+                    </div>
+
+                    <div class="card-dashboard">
+                        <h3>Status</h3>
+                        <h2>Em evolução</h2>
+                    </div>
+
+                </div>
+
+                <div class="barra-area">
+                    <h3>Evolução de maturidade</h3>
+
+                    <div class="barra-externa">
+                        <div class="barra-interna" id="barraMaturidade"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- EMPRESA -->
+            <div id="empresa" class="tela" style="display:none;">
+
+                <h1>Cadastro de Empresa</h1>
+
+                <p>Informe os dados principais da empresa para iniciar a avaliação Green IT.</p>
+
+                <div class="form-empresa">
+
+                    <input type="text" id="razaoSocial" placeholder="Razão social">
+                    <input type="text" id="nomeEmpresa" placeholder="Nome fantasia">
+                    <input type="text" id="cnpjEmpresa" placeholder="CNPJ">
+
+                    <select id="porteEmpresa">
+                        <option value="">Porte da empresa</option>
+                        <option>MEI</option>
+                        <option>Pequena empresa</option>
+                        <option>Média empresa</option>
+                        <option>Grande empresa</option>
+                    </select>
+
+                    <select id="setorEmpresa">
+                        <option value="">Setor de atuação</option>
+                        <option>Tecnologia</option>
+                        <option>Saúde</option>
+                        <option>Educação</option>
+                        <option>Comércio</option>
+                        <option>Indústria</option>
+                        <option>Serviços</option>
+                        <option>Outro</option>
+                    </select>
+
+                    <input type="text" id="cidadeEmpresa" placeholder="Cidade">
+
+                    <select id="estadoEmpresa">
+                        <option value="">Estado</option>
+                        <option>SP</option>
+                        <option>RJ</option>
+                        <option>MG</option>
+                        <option>PR</option>
+                        <option>SC</option>
+                        <option>RS</option>
+                        <option>BA</option>
+                        <option>PE</option>
+                        <option>GO</option>
+                        <option>DF</option>
+                    </select>
+
+                    <input type="number" id="colaboradoresEmpresa" placeholder="Quantidade de colaboradores">
+                    <input type="text" id="responsavelEmpresa" placeholder="Responsável de TI">
+                    <input type="email" id="emailResponsavel" placeholder="E-mail do responsável">
+                    <input type="text" id="telefoneResponsavel" placeholder="Telefone">
+
+                    <button onclick="cadastrarEmpresa()">Salvar / Cadastrar</button>
+
+                </div>
+
+                <div id="perfilEmpresa" style="display:none;"></div>
+
+            </div>
+
+    <!-- MATURIDADE -->
+<div id="maturidade" class="tela" style="display:none;">
+
+    <h1>Avaliação de Maturidade Green IT</h1>
+
+    <p>
+        Responda uma dimensão por vez, selecionando o nível de maturidade mais adequado à realidade da empresa.
+    </p>
+
+    <div class="layout-maturidade">
+
+        <div class="coluna-legenda">
+
+            <h2>Níveis de Maturidade</h2>
+
+            <div class="legenda-niveis">
+
+                <div class="linha-nivel n0">
+                    <strong>0 - NÃO SE APLICA / NÃO CONHEÇO</strong>
+                    <span>O respondente não tem informação ou o item não condiz com a realidade da empresa.</span>
+                </div>
+
+                <div class="linha-nivel n1">
+                    <strong>1 - INEXISTENTE</strong>
+                    <span>A empresa nunca pensou sobre isso; não há ação, documento ou intenção.</span>
+                </div>
+
+                <div class="linha-nivel n2">
+                    <strong>2 - REATIVO</strong>
+                    <span>A empresa só age quando o problema aparece.</span>
+                </div>
+
+                <div class="linha-nivel n3">
+                    <strong>3 - FUNCIONAL</strong>
+                    <span>A prática existe e funciona no dia a dia, mas é informal ou não é padronizada.</span>
+                </div>
+
+                <div class="linha-nivel n4">
+                    <strong>4 - ESTRATÉGICO</strong>
+                    <span>Existe um processo claro, documentado e a gestão acompanha os resultados.</span>
+                </div>
+
+                <div class="linha-nivel n5">
+                    <strong>5 - SUSTENTÁVEL</strong>
+                    <span>É o estado da arte; a empresa usa tecnologia de ponta e busca inovação constante.</span>
+                </div>
+
+            </div>
+
+            <div class="instrucao-maturidade">
+                <p>
+                    Para cada requisito apresentado, selecione o nível correspondente à realidade da organização.
+                </p>
+
+                <p>
+                    Os campos de observação podem ser usados para descrever práticas existentes, desafios ou iniciativas.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="coluna-perguntas">
+
+            <div id="avaliacaoDimensao"></div>
+
+            <div id="resultadoMaturidade"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+            <!-- ATIVOS -->
+             <div id="ativos"
+                  class="tela"
+                  style="display:none;">
+
+                  <h1>Cadastro de Ativos de TI</h1>
+
+                  <p>
+                    Registre os equipamentos da empresa para acompanhar consumo,
+                    tempo de uso e situação dos ativos tecnológicos.
+                </p>
+                
+                <div class="quiz-maturidade">
+                    
+                    <div class="pergunta">
+                        <h3>Nome do ativo</h3>
+                        <input type="text" id="nomeAtivo" placeholder="Ex: Notebook Dell RH-01">
+                    </div>
+                    
+                    <div class="pergunta">
+                        <h3>Tipo do ativo</h3>
+                        <select id="tipoAtivo">
+                            <option value="">Selecione o tipo</option>
+                            <option>Notebook</option>
+                            <option>Desktop</option>
+                            <option>Servidor</option>
+                            <option>Impressora</option>
+                            <option>Switch</option>
+                            <option>Roteador</option>
+                        </select>
+                    </div>
+
+                    <div class="pergunta">
+                        <h3>Consumo energético aproximado</h3>
+                        <input type="number" id="consumoAtivo" placeholder="Ex: 65 W">
+                    </div>
+                    
+                    <div class="pergunta">
+                        <h3>Tempo de uso do equipamento</h3>
+                        <input type="number" id="idadeAtivo" placeholder="Ex: 3 anos">
+                    </div>
+                    
+                    <div class="pergunta">
+                        <h3>Status do ativo</h3>
+                        <select id="statusAtivo">
+                            <option value="">Selecione o status</option>
+                            <option>Em uso</option>
+                            <option>Ocioso</option>
+                            <option>Necessita manutenção</option>
+                            <option>Próximo do descarte</option>
+                            <option>Descartado</option>
+            
+                        </select>
+        
+                    </div>
+
+        
+                    <button onclick="cadastrarAtivo()">
+                        Cadastrar Ativo
+                    </button>
+                
+                </div>
+                
+                <div id="listaAtivos"></div>
+        
+        </div>
+
+            <!-- MELHORIAS -->
+             <div id="melhorias"
+                  class="tela"
+                  style="display:none;">
+                  
+                  <h1>Plano de Melhorias Green IT</h1>
+                  
+                  <p>
+                    Recomendações automáticas baseadas no nível de maturidade da empresa.
+                </p>
+                
+                <div id="conteudoMelhorias">
+                    
+                <div class="card-melhoria">
+                    
+                    <h2>Nenhuma análise realizada
+
+                    </h2>
+                    
+                <p>
+                    Realize primeiro a avaliação de maturidade Green IT.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+            <!-- LINHA DO TEMPO -->
+            <div id="timeline"
+     class="tela"
+     style="display:none;">
+
+    <h1>Linha do Tempo Green IT</h1>
+
+    <p>
+        Acompanhe a evolução sustentável da empresa
+        ao longo da jornada Green IT.
+    </p>
+
+    <div class="timeline-area">
+
+        <div class="timeline-item">
+
+            <div class="timeline-ponto"></div>
+
+            <div class="timeline-card">
+
+                <h2>Etapa 1 - Diagnóstico Inicial</h2>
+
+                <p>
+                    Realização da primeira avaliação
+                    de maturidade Green IT da empresa.
+                </p>
+
+                <span>Status: Concluído</span>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-ponto"></div>
+
+            <div class="timeline-card">
+
+                <h2>Etapa 2 - Cadastro de Ativos</h2>
+
+                <p>
+                    Registro e monitoramento dos ativos
+                    tecnológicos da organização.
+                </p>
+
+                <span>Status: Em andamento</span>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-ponto"></div>
+
+            <div class="timeline-card">
+
+                <h2>Etapa 3 - Plano de Melhorias</h2>
+
+                <p>
+                    Aplicação das recomendações
+                    automáticas para evolução sustentável.
+                </p>
+
+                <span>Status: Planejado</span>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-ponto"></div>
+
+            <div class="timeline-card">
+
+                <h2>Etapa 4 - Certificações Green IT</h2>
+
+                <p>
+                    Busca por certificações ambientais
+                    e consolidação da governança ESG.
+                </p>
+
+                <span>Status: Futuro</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+            <!-- TREINAMENTOS -->
+            <div id="treinamentos"
+     class="tela"
+     style="display:none;">
+
+    <h1>Treinamentos Green IT</h1>
+
+    <p>
+        Capacite os colaboradores com conteúdos
+        voltados à sustentabilidade tecnológica.
+    </p>
+
+    <div class="cards-treinamento">
+
+        <div class="card-treinamento">
+
+            <h2>Introdução ao Green IT</h2>
+
+            <p>
+                Conceitos fundamentais sobre
+                sustentabilidade aplicada à TI.
+            </p>
+
+            <div class="status-treinamento concluido">
+                Concluído
+            </div>
+
+            <button>
+                Acessar Conteúdo
+            </button>
+
+        </div>
+
+        <div class="card-treinamento">
+
+            <h2>Eficiência Energética</h2>
+
+            <p>
+                Boas práticas para redução do
+                consumo energético da infraestrutura.
+            </p>
+
+            <div class="status-treinamento andamento">
+                Em andamento
+            </div>
+
+            <button>
+                Continuar Treinamento
+            </button>
+
+        </div>
+
+        <div class="card-treinamento">
+
+            <h2>Descarte Sustentável</h2>
+
+            <p>
+                Gestão correta de resíduos
+                eletrônicos e equipamentos de TI.
+            </p>
+
+            <div class="status-treinamento pendente">
+                Não iniciado
+            </div>
+
+            <button>
+                Iniciar Treinamento
+            </button>
+
+        </div>
+
+        <div class="card-treinamento">
+
+            <h2>Governança ESG</h2>
+
+            <p>
+                Estratégias organizacionais
+                voltadas à sustentabilidade corporativa.
+            </p>
+
+            <div class="status-treinamento pendente">
+                Não iniciado
+            </div>
+
+            <button>
+                Iniciar Treinamento
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+            <!-- QUIZ -->
+            <div id="quiz"
+     class="tela"
+     style="display:none;">
+
+    <h1>Quiz de Conscientização Green IT</h1>
+
+    <p>
+        Teste os conhecimentos dos colaboradores
+        sobre sustentabilidade tecnológica.
+    </p>
+
+    <div class="quiz-area">
+
+        <!-- PERGUNTA 1 -->
+        <div class="quiz-card">
+
+            <h2>
+                1. O que significa Green IT?
+            </h2>
+
+            <select class="quizResposta">
+
+                <option value="0">
+                    Selecione uma resposta
+                </option>
+
+                <option value="1">
+                    Tecnologia sustentável
+                </option>
+
+                <option value="0">
+                    Sistema operacional verde
+                </option>
+
+                <option value="0">
+                    Antivírus ecológico
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- PERGUNTA 2 -->
+        <div class="quiz-card">
+
+            <h2>
+                2. Qual prática reduz o consumo energético?
+            </h2>
+
+            <select class="quizResposta">
+
+                <option value="0">
+                    Selecione uma resposta
+                </option>
+
+                <option value="0">
+                    Deixar equipamentos ligados
+                </option>
+
+                <option value="1">
+                    Virtualização de servidores
+                </option>
+
+                <option value="0">
+                    Aumentar brilho das telas
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- PERGUNTA 3 -->
+        <div class="quiz-card">
+
+            <h2>
+                3. Qual é a forma correta de descarte eletrônico?
+            </h2>
+
+            <select class="quizResposta">
+
+                <option value="0">
+                    Selecione uma resposta
+                </option>
+
+                <option value="0">
+                    Lixo comum
+                </option>
+
+                <option value="1">
+                    Empresas certificadas
+                </option>
+
+                <option value="0">
+                    Queimar equipamentos
+                </option>
+
+            </select>
+
+        </div>
+
+        <button onclick="corrigirQuiz()">
+            Finalizar Quiz
+        </button>
+
+        <div id="resultadoQuiz"></div>
+
+    </div>
+
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
